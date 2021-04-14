@@ -1,0 +1,27 @@
+1. What are indexes in DB and why do we use indexing?
+2. What is the difference between null=True and blank=True in django models?
+3. What is the default name used in views for context variables?
+
+https://phoenixnap.com/kb/how-to-install-git-windows
+https://stackoverflow.com/a/46679813/2613005
+
+Generate SSH Key: https://phoenixnap.com/kb/generate-ssh-key-windows-10
+https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/
+https://kbroman.org/github_tutorial/pages/init.html
+
+
+git init
+
+
+git config user.name "Sumit S Chawla"
+git config user.username "SamChawla"
+git config user.email "sam.chawla26@gmail.com"
+
+git remote add origin git@github.com:username/new_repo
+git status
+
+
+
+git clone https://github.com/SamChawla/my-blog-project.git
+
+https://medium.com/@olawalemosesbabsdee/how-to-track-number-of-post-views-on-a-django-blog-app-2bb3a4194a26
