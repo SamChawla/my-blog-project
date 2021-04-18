@@ -110,6 +110,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+my_venv3.8.8
 
 # Spyder project settings
 .spyderproject
