@@ -22,4 +22,5 @@ class Post(models.Model):
         ordering = ("-published_at",)
 
     def __str__(self):
-        return self.title
+        return f"{self.id} - {self.title}"
+
