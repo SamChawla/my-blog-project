@@ -21,11 +21,9 @@ class Post(models.Model):
     published_at = models.DateTimeField(default=timezone.now)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    status = models.CharField(
-        max_length=10, choices=STATUS_CHOICES, default="draft"
-    )
-    objects = models.Manager() # Default Manager
-    published = PublishedManager() # Custom Manager
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
+    objects = models.Manager()  # Default Manager
+    published = PublishedManager()  # Custom Manager
 
     class Meta:
         ordering = ("-published_at",)
