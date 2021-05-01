@@ -8,7 +8,7 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blog-home')
+            return redirect('login')
     else:
         form = UserRegistrationForm()
     context = {
