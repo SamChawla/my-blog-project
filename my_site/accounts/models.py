@@ -3,11 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    GENDER = (
-        ("MALE", "MALE"),
-        ("FEMALE", "FEMALE"),
-        ("SKIP", "SKIP")
-    )
+    GENDER = (("MALE", "MALE"), ("FEMALE", "FEMALE"), ("SKIP", "SKIP"))
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default="default.jpg", upload_to="profile_pics")

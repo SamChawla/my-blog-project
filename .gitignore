@@ -134,3 +134,6 @@ dmypy.json
 
 # STATIC FILES
 BASE_DIR/
+
+# MEDIA FILES
+media/
