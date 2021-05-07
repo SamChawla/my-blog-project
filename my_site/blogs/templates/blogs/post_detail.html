@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load hitcount_tags %}
 {% block content %}
   <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
@@ -6,6 +7,7 @@
       <div class="article-metadata">
         <a class="mr-2" href="#">{{ object.author }}</a>
         <small class="text-muted">{{ object.published_at|date:"F d, Y" }}</small>
+        <small class="text-muted">| No. of Views:  {% get_hit_count for object %}</small>
       </div>
       <h2 class="article-title">{{ object.title }}</h2>
       <p class="article-content">{{ object.content }}</p>

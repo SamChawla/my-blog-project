@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third Party Apps
     "debug_toolbar",
     "crispy_forms",
+    "hitcount",
 ]
 
 MIDDLEWARE = [
