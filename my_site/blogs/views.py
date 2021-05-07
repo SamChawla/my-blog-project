@@ -1,9 +1,13 @@
 from datetime import datetime
-from django.urls import reverse
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
+
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
+from hitcount.views import HitCountDetailView
+
 from .models import Post
 
 
@@ -27,6 +31,7 @@ class PostListView(ListView):
     template_name = 'blogs/home.html'
     context_object_name = 'posts'
     ordering = ['-published_at']
+    paginate_by = 1
 
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -37,9 +42,9 @@ class PostListView(ListView):
 post_list_view = PostListView.as_view()
 
 
-class PostDetailView(DetailView):
+class PostDetailView(HitCountDetailView):
     model = Post
-    # pk_url_kwarg = 'id'
+    count_hit = True    # set to True if you want it to try and count the hit
 
 post_detail_view = PostDetailView.as_view()
 

@@ -11,5 +11,6 @@
             <p class="article-content">{{ post.content }}</p>
           </div>
         </article>
-    {% endfor %}
+        {% endfor %}
+        {% include 'blogs/paginate.html' %}
 {% endblock content %}
