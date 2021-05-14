@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-5**j8@65z39#o+a^23%z0duq0p3@9)^vm4ggw^4=b@j_jq7yi@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 INTERNAL_IPS = [
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "hitcount",
     "storages",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
