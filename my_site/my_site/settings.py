@@ -50,11 +50,15 @@ INSTALLED_APPS = [
     
     # Third Party Apps
     "debug_toolbar",
-    "crispy_forms",
     "hitcount",
     "storages",
     "rest_framework",
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'django_summernote'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -172,7 +176,7 @@ AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = "ap-south-1"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 
