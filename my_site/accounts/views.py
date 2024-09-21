@@ -1,9 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
-
+from blogs.models import Post
 from .forms import ProfileUpdateForm, UserRegistrationForm, UserUpdateForm
-
 
 def register(request):
     if request.method == "POST":
@@ -42,3 +41,4 @@ def profile(request):
         "title": "User Profile",
     }
     return render(request, "accounts/profile.html", context)
+

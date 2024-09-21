@@ -11,6 +11,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'django_summernote/summernote.css' %}">
+    <link rel="stylesheet" href="{% static 'django_summernote/summernote-bs5.css' %}">
+
+    <style>
+      .new-blog-message {
+    color: whitesmoke;
+    text-decoration: rgb(219, 214, 214);
+    font-weight: bold;
+    }
+    .new-blog-message :hover, .new-blog-message :active, .new-blog-message :visited {
+            color: rgba(0, 0, 0, 0.64);
+            text-decoration: none;
+        }
+    
+    </style>
 
     {% if title %}
         <title>{{ title }}</title>
@@ -33,6 +48,7 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
+                
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'user-profile' %}" >Profile </a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -42,6 +58,9 @@
               {% endif %}
               </div>
           </div>
+        </div>
+        <div>
+          <a class="new-blog-message" href="{% url 'post-create' %}">Add New Blog</a>
         </div>
       </nav>
     </header>
@@ -68,7 +87,10 @@
           </div>
         </div>
       </div>
+      
     </main>
+
+    <br><br>
     <!-- Footer -->
     <footer class="bg-grey">
       <p class="m-0 text-dark text-center ">Copyright &copy; SSCorp.</p>
@@ -78,5 +100,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'django_summernote/summernote.min.js' %}"></script>
+    <script src="{% static 'django_summernote/lang/summernote-en-US.min.js' %}"></script> -->
 </body>
 </html>
