@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 from hitcount.views import HitCountDetailView
-
+from accounts.forms import BlogPostForm
 from .models import Post
 
 
@@ -51,7 +51,9 @@ post_detail_view = PostDetailView.as_view()
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content', 'status']
+    # fields = ['title', 'content', 'status']
+    form_class = BlogPostForm
+    template_name = 'blog_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -91,3 +93,16 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 post_delete_view = PostDeleteView.as_view()
+
+# class BlogCreateView(CreateView):
+#     model = Post
+#     form_class = BlogPostForm
+#     template_name = 'blog_form.html'
+#     success_url = '/'
+
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
+
+
+

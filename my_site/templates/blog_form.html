@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{% if view.action == 'create' %}New Blog Post{% else %} Add Blog Post{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save<br><br><br></button>
+  </form>
+{% endblock %}
